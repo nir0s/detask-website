@@ -150,14 +150,14 @@
     /* ── Screenshot ── */
     .screenshot-section {
       padding: 0 32px 100px;
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
     .screenshot-frame {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
       background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
       border-radius: var(--radius);
       border: 1px solid var(--color-border);
@@ -294,65 +294,144 @@
     /* ── Integrations ── */
     .integrations {
       padding: 80px 32px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
-      text-align: center;
     }
 
-    .integrations h2 {
+    .integrations-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .integrations-header h2 {
       font-size: 2rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
 
-    .integrations > p {
+    .integrations-header p {
       font-size: 1.0625rem;
       color: var(--color-text-secondary);
-      margin-bottom: 48px;
     }
 
-    .integration-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+    .integrations-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
     }
 
-    .integration-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .integration-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
+    .integration-card {
+      padding: 28px 20px;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: var(--radius);
+      text-align: center;
       transition: box-shadow 0.25s, transform 0.25s;
     }
 
-    .integration-icon:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    .integration-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
       transform: translateY(-2px);
     }
 
-    .integration-icon svg {
-      width: 28px;
-      height: 28px;
+    .integration-card-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .integration-item span {
+    .integration-card-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .integration-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .integration-card p {
       font-size: 0.8125rem;
-      font-weight: 500;
       color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .unlimited-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Mobile ── */
+    .mobile {
+      padding: 80px 32px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mobile h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .mobile > p {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .store-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 28px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: box-shadow 0.25s;
+    }
+
+    .store-banner:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    .store-banner svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .store-banner-text {
+      text-align: left;
+    }
+
+    .store-banner-text .coming-soon {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+    }
+
+    .store-banner-text .store-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
     }
 
     /* ── Footer ── */
@@ -407,12 +486,13 @@
         gap: 16px;
       }
 
-      .story, .features, .integrations {
-        padding: 60px 20px;
+      .integrations-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
       }
 
-      .integration-logos {
-        gap: 24px;
+      .story, .features, .integrations {
+        padding: 60px 20px;
       }
     }
 
@@ -444,7 +524,7 @@
   <section class="hero">
     <div class="hero-badge">Task management, reimagined</div>
     <h1>What Google Tasks <em>should've</em> been</h1>
-    <p>Integrated, streamlined, with a native Google Calendar feel. Stop jumping between tools &mdash; Detask brings everything into the workflow you already know.</p>
+    <p>Integrated, streamlined, with a native Google Calendar feel. Detask extends the workflow you already love with powerful task management, integrations, and AI.</p>
     <a href="#features" class="hero-cta">
       See how it works
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
@@ -454,13 +534,7 @@
   <!-- Screenshot -->
   <section class="screenshot-section fade-in">
     <div class="screenshot-frame">
-      <!-- Replace the placeholder below with: <img src="screenshot.png" alt="Detask app screenshot"> -->
-      <div class="screenshot-placeholder">
-        <div style="text-align:center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          <div>App screenshot</div>
-        </div>
-      </div>
+      <img src="images/main-scr.png" alt="Detask app screenshot">
     </div>
   </section>
 
@@ -481,10 +555,18 @@
     <div class="features-grid">
       <div class="feature-card fade-in">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         </div>
-        <h3>Google Calendar native</h3>
-        <p>Feels like it was always part of Google Calendar. Multi-account support built in from day one.</p>
+        <h3>Unified inbox + Today view</h3>
+        <p>All incoming tasks land in one inbox. Switch to Today to manage your day and plan for tomorrow, right alongside your meetings.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 00-3 3v12a3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3H6a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3h12a3 3 0 003-3 3 3 0 00-3-3z"/></svg>
+        </div>
+        <h3>Keyboard-first</h3>
+        <p>Shortcuts for everything. Triage, schedule, move, complete &mdash; never reach for the mouse.</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -492,51 +574,45 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         </div>
         <h3>AI chat</h3>
-        <p>Search across your tasks, get stats on your productivity, and organize things with natural language.</p>
+        <p>Ask anything about your tasks and lists. Get stats, find what you need, and organize intuitively with natural language.</p>
       </div>
 
       <div class="feature-card fade-in">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
-        <h3>MCP server</h3>
-        <p>Manage your tasks from any MCP-compatible AI chat. Your workflow, your tools, your way.</p>
+        <h3>Rich context in lists</h3>
+        <p>Add Notion-like rich content to your tasks. Notes, checklists, links &mdash; everything lives with the task, not in a separate doc.</p>
       </div>
 
       <div class="feature-card fade-in">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
         </div>
-        <h3>Gmail integration</h3>
-        <p>Turn emails into tasks without leaving your flow. Context stays attached, nothing gets lost.</p>
+        <h3>Recurring tasks + notifications</h3>
+        <p>Set up repeating tasks and reminders that feel just like Google Calendar events. Same logic, same reliability.</p>
       </div>
 
       <div class="feature-card fade-in">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2M8 17h2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3>Slack integration</h3>
-        <p>Capture tasks from Slack messages. Stay in the conversation while staying on top of your work.</p>
-      </div>
-
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-        </div>
-        <h3>GitHub integration</h3>
-        <p>Link issues and PRs to your tasks. Development work flows seamlessly into your calendar.</p>
+        <h3>Overdue? No guilt</h3>
+        <p>Quickly reschedule, snooze, or batch-move overdue tasks. Beat procrastination instead of drowning in red labels.</p>
       </div>
     </div>
   </section>
 
   <!-- Integrations -->
-  <section class="integrations fade-in" id="integrations">
-    <h2>Connects to what you use</h2>
-    <p>First-class integrations with the tools your day revolves around.</p>
+  <section class="integrations" id="integrations">
+    <div class="integrations-header fade-in">
+      <h2>Integrate to as many accounts as you need</h2>
+      <p>Connect as many accounts as you need. All of them sync into your unified inbox.</p>
+    </div>
 
-    <div class="integration-logos">
-      <div class="integration-item">
-        <div class="integration-icon">
+    <div class="integrations-grid">
+      <div class="integration-card fade-in">
+        <div class="integration-card-icon">
           <svg viewBox="0 0 24 24">
             <path d="M21.35 11.1h-9.18v2.73h5.51c-.24 1.27-.98 2.34-2.08 3.06l3.36 2.61c1.96-1.81 3.09-4.47 3.09-7.62 0-.65-.06-1.28-.17-1.88z" fill="#4285F4"/>
             <path d="M12.17 22c2.81 0 5.17-.93 6.89-2.53l-3.36-2.61c-.93.63-2.13 1-3.53 1-2.72 0-5.02-1.84-5.84-4.31H2.86v2.69C4.57 19.74 8.09 22 12.17 22z" fill="#34A853"/>
@@ -544,20 +620,35 @@
             <path d="M12.17 5.43c1.53 0 2.91.53 3.99 1.56l2.99-2.99C17.33 2.09 14.97 1 12.17 1 8.09 1 4.57 3.26 2.86 6.76l3.47 2.69c.82-2.47 3.12-4.02 5.84-4.02z" fill="#EA4335"/>
           </svg>
         </div>
-        <span>Google Calendar</span>
+        <div class="unlimited-badge">Unlimited accounts</div>
+        <h3>Google Calendar</h3>
+        <p>Two-way sync. Choose exactly which calendars to sync to and from, across all your accounts.</p>
       </div>
 
-      <div class="integration-item">
-        <div class="integration-icon">
+      <div class="integration-card fade-in">
+        <div class="integration-card-icon">
           <svg viewBox="0 0 24 24">
             <path d="M20 18h-2V9.25L12 13 6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20v12z" fill="#EA4335"/>
           </svg>
         </div>
-        <span>Gmail</span>
+        <div class="unlimited-badge">Unlimited accounts</div>
+        <h3>Gmail</h3>
+        <p>Star or label an email to create a task with rich context. When a task is done, choose how to handle the email it came from.</p>
       </div>
 
-      <div class="integration-item">
-        <div class="integration-icon">
+      <div class="integration-card fade-in">
+        <div class="integration-card-icon">
+          <svg viewBox="0 0 24 24" fill="#24292f">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </div>
+        <div class="unlimited-badge">Unlimited accounts</div>
+        <h3>GitHub</h3>
+        <p>Auto-create tasks when someone mentions you or assigns a PR for review. Stay on top of code without context-switching.</p>
+      </div>
+
+      <div class="integration-card fade-in">
+        <div class="integration-card-icon">
           <svg viewBox="0 0 24 24">
             <path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313z" fill="#E01E5A"/>
             <path d="M8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312z" fill="#36C5F0"/>
@@ -565,26 +656,39 @@
             <path d="M15.164 18.956a2.528 2.528 0 012.521 2.522A2.528 2.528 0 0115.164 24a2.527 2.527 0 01-2.522-2.522v-2.522h2.522zm0-1.271a2.527 2.527 0 01-2.522-2.521 2.528 2.528 0 012.522-2.522h6.314A2.528 2.528 0 0124 15.164a2.528 2.528 0 01-2.522 2.521h-6.314z" fill="#ECB22E"/>
           </svg>
         </div>
-        <span>Slack</span>
+        <div class="unlimited-badge">Unlimited accounts</div>
+        <h3>Slack</h3>
+        <p>Create tasks directly from Slack messages and list existing tasks without leaving the conversation.</p>
       </div>
 
-      <div class="integration-item">
-        <div class="integration-icon">
-          <svg viewBox="0 0 24 24" fill="#24292f">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-          </svg>
-        </div>
-        <span>GitHub</span>
-      </div>
-
-      <div class="integration-item">
-        <div class="integration-icon">
+      <div class="integration-card fade-in">
+        <div class="integration-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"/>
             <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
           </svg>
         </div>
-        <span>MCP</span>
+        <div class="unlimited-badge">Any AI chat</div>
+        <h3>MCP Server</h3>
+        <p>Connect your favorite AI chat to ask any question about your tasks or create new ones on the fly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile -->
+  <section class="mobile fade-in">
+    <h2>Take it with you</h2>
+    <p>Detask is a mobile-first, installable PWA &mdash; fast and ready on any device. A native Android app is on the way.</p>
+    <div class="store-banner">
+      <svg viewBox="0 0 24 24">
+        <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z" fill="#4285F4"/>
+        <path d="M17.556 8.248l-3.764 3.753 3.764 3.752 4.247-2.39a1.002 1.002 0 000-1.726l-4.247-2.39z" fill="#FBBC04"/>
+        <path d="M3.609 1.814L13.792 12l3.764-3.752-9.924-5.59a1.09 1.09 0 00-4.023-.844z" fill="#34A853"/>
+        <path d="M13.792 12L3.61 22.186a1.09 1.09 0 004.023-.844l9.924-5.59L13.792 12z" fill="#EA4335"/>
+      </svg>
+      <div class="store-banner-text">
+        <div class="coming-soon">Coming soon</div>
+        <div class="store-name">Google Play</div>
       </div>
     </div>
   </section>
